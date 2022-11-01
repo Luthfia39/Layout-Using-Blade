@@ -30,7 +30,7 @@ class bukuController extends Controller
 
     public function store(Request $request){
         $daftar_pesan =[
-            'required' => 'Harap mengisi semua kotak inputan!',
+            'required' => 'Harap mengisi :attribute inputan!',
             'max' => 'Inputan anda melebihi :max karakter',
         ];
 
