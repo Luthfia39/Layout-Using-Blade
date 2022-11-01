@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class bukuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
         // Model_Buku = nama class
         // $data_buku = Model_Buku::all();

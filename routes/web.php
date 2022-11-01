@@ -33,8 +33,8 @@ Route::post('/buku/update/{id}', [bukuController::class, 'update'])->name('buku.
 Route::get('/buku/search', [bukuController::class, 'search'])->name('buku.search');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/home', [App\Http\Controllers\BukuController::class, 'index'])->name('index');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
