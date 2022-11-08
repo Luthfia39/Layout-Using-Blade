@@ -12,6 +12,7 @@ class bukuController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        // $this->middleware('admin');
     }
 
     public function index(){
@@ -54,13 +55,13 @@ class bukuController extends Controller
         $buku->harga = $request->harga;
         $buku->tgl_terbit = $request->tgl_terbit;
         $buku->save();
-        return redirect('/buku')->with('pesan', 'Data yang anda masukkan berhasil disimpan!');
+        return redirect('/home')->with('pesan', 'Data yang anda masukkan berhasil disimpan!');
     }
 
     public function destroy($id){
         $buku = Model_Buku::find($id);
         $buku->delete();
-        return redirect('/buku')->with('pesan', 'Data buku berhasil dihapus!');
+        return redirect('/home')->with('pesan', 'Data buku berhasil dihapus!');
     }
 
     public function edit($id){
@@ -75,7 +76,7 @@ class bukuController extends Controller
         $buku->harga = $request->harga;
         $buku->tgl_terbit = $request->tgl_terbit;
         $buku->save();
-        return redirect('/buku')->with('pesan', 'Data buku berhasil diubah!');
+        return redirect('/home')->with('pesan', 'Data buku berhasil diubah!');
     }
 
     public function search(Request $request){

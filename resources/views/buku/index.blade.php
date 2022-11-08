@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (Auth::check() && Auth::user()->level == 'admin')
     <!-- Flash Message -->
     @if(Session::has('pesan'))
         <div class="alert alert-success">
@@ -61,4 +62,7 @@
     <a href="{{route('buku.create')}}" class="btn btn-primary" role="button">
         Tambah Buku
     </a>
+    @else
+    <p class="display-6 text-center mt-5">Anda tidak dapat mengakses laman ini</p>
+    @endif
 @endsection

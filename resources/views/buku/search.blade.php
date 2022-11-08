@@ -48,6 +48,6 @@
             </tbody>
         </table>
         <div>{{$data_buku->links()}}</div>
-        <a href="/buku" class="col-2 btn btn-warning">Kembali</a>
+        <a href="/home" class="col-2 btn btn-warning">Kembali</a>
     </body>
 @endsection
