@@ -33,7 +33,7 @@
             <label for="foto">Upload foto</label>  
             <input type="file" class="form-control" name="foto">                     
         </div>
-        <button type="submit" class="btn btn-primary mt-5">Simpan</button>
+        <button type="submit" class="btn btn-primary mt-5">Tambah</button>
         <a href="/galeri" class="btn btn-secondary mt-5 ms-3">Batal</a>
     </form>
 @endsection

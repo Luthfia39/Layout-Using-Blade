@@ -36,9 +36,7 @@ use Illuminate\Support\Facades\DB;
 // Route::get('/buku/search', [showBookController::class, 'search'])->name('buku.search');
 
 // buku
-Route::get('/', function (){
-    return view('/buku/welcome');
-});
+
 Route::get('/home', [bukuController::class, 'index'])->name('index');
 Route::get('/buku/create', [bukuController::class, 'create'])->name('buku.create');
 Route::post('/buku/store', [bukuController::class, 'store'])->name('buku.store');
@@ -58,6 +56,7 @@ Route::post('/user/update/{id}', [accountController::class, 'update'])->name('us
 Auth::routes();
 
 // image
+Route::get('/', function (){return view('/welcome');});
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
 Route::post('/galeri/store', [GaleriController::class, 'store'])->name('galeri.store');

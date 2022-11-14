@@ -24,7 +24,7 @@
                 name="tgl_terbit" value="{{$buku->tgl_terbit}}"> 
                 <label for="tgl_terbit">Tanggal Terbit</label>                       
             </div>
-            <button type="submit" class="btn btn-primary">Tambah</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="/home" class="btn btn-secondary">Batal</a>
         </form>
     </body>

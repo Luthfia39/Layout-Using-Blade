@@ -19,7 +19,7 @@
 <body>
     <div id="app">
     @if (Auth::check() && Auth::user()->level == 'admin')
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top top-0">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/buku') }}">
                     {{ 'Laravel (Admin)' }}
@@ -36,6 +36,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.index') }}">Pengguna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('galeri.index') }}">Galeri</a>
                         </li>
                     </ul>
 
@@ -79,7 +82,7 @@
         </nav>
 
         @else
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top top-0">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/buku') }}">
                     {{ 'Laravel (User)' }}
@@ -134,7 +137,7 @@
         </nav>
         @endif
 
-        <main class="container pt-5">
+        <main class="container pt-5 pb-5">
             @yield('content')
         </main>
     </div>
