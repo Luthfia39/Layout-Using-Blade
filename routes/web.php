@@ -44,6 +44,7 @@ Route::post('/buku/delete/{id}', [bukuController::class, 'destroy'])->name('buku
 Route::post('/buku/edit/{id}', [bukuController::class, 'edit'])->name('buku.edit');
 Route::post('/buku/update/{id}', [bukuController::class, 'update'])->name('buku.update');
 Route::get('/buku/search', [bukuController::class, 'search'])->name('buku.search');
+Route::post('/detail-buku/{judul}', [bukuController::class, 'galbuku'])->name('buku.detail');
 Auth::routes();
 
 // user

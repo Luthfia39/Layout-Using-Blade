@@ -15,7 +15,7 @@
         <input type="text" name="kata" class="form form-control" 
         placeholder="Cari" style="width: 30%;">
     </form>
-    <table class="table table-bordered">
+    <table class="table table-bordered text-center">
         <thead>
             <tr>
                 <th>id</th>
@@ -41,9 +41,13 @@
                         <button onclick="return confirm('Yakin akan menghapus?')" 
                         class="btn btn-primary">Hapus</button>
                     </form>
-                    <form action="{{route('buku.edit',$value->id)}}" method="POST">
+                    <form action="{{route('buku.edit',$value->id)}}" method="POST" method="POST" class="p-1">
                         @csrf
                         <button class="btn btn-primary">Edit</button>
+                    </form>
+                    <form action="{{ route('buku.detail', $value->buku_seo) }}" method="POST" method="POST" class="pb-1">
+                        @csrf
+                        <button class="btn btn-primary">Detail</button>
                     </form>
                 </td>
             </tr>

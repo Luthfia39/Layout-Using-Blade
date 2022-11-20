@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galeri;
 use App\Models\Model_Buku;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 
 class bukuController extends Controller
 {
@@ -16,9 +18,6 @@ class bukuController extends Controller
     }
 
     public function index(){
-        // Model_Buku = nama class
-        // $data_buku = Model_Buku::all();
-
         $batas = 3;
         $data_buku = Model_Buku::orderBy('id', 'desc')->paginate($batas);
         $no = $batas * ($data_buku->currentPage() - 1);
@@ -51,6 +50,7 @@ class bukuController extends Controller
         // input secara langsung tanpa validasi
         $buku = new Model_Buku();
         $buku->judul = $request->judul;
+        $buku->buku_seo = Str::slug($request->judul, '-');
         $buku->penulis = $request->penulis;
         $buku->harga = $request->harga;
         $buku->tgl_terbit = $request->tgl_terbit;
@@ -87,5 +87,11 @@ class bukuController extends Controller
         $no = $batas * ($data_buku->currentPage() - 1);
         
         return view('buku.search', compact('data_buku', 'no', 'cari'));
+    }
+
+    public function galbuku($judul){
+        $buku = Model_Buku::where('buku_seo', $judul)->first();
+        $galeri = $buku->photos()->orderBy('id', 'desc')->paginate(2);
+        return view('buku.detail', compact('buku', 'galeri'));
     }
 }

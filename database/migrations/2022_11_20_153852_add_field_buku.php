@@ -4,22 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
+     *
      * @return void
      */
-    public function up()
-    {
-        Schema::create("buku", function (Blueprint $table){
-            $table->id();
-            $table->string('judul');
-            $table->string('penulis');
-            $table->integer('harga');
-            $table->date('tgl_terbit');
+    public function up(){
+        Schema::table('buku', function (Blueprint $table) {
             $table->string('buku_seo');
             $table->string('foto');
-            $table->timestamps();
         });
     }
 
