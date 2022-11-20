@@ -15,7 +15,7 @@
         <input type="text" name="kata" class="form form-control" 
         placeholder="Cari" style="width: 30%;">
     </form>
-    <table class="table table-bordered text-center">
+    <table class="table table-bordered text-center" style="border: black;">
         <thead>
             <tr>
                 <th>id</th>
@@ -54,11 +54,11 @@
             @endforeach
             <tr>
                 <td colspan="4" class="text-end fw-bold">Total Harga</td>
-                <td class="fw-bold">{{"Rp".number_format($price, 0, ',', '.')}}</td>
+                <td colspan="2" class="text-start fw-bold">{{"Rp".number_format($price, 0, ',', '.')}}</td>
             </tr>
             <tr>
                 <td colspan="4" class="text-end fw-bold">Total Data</td>
-                <td class="fw-bold">{{$amount}}</td>
+                <td colspan="2" class="text-start fw-bold">{{$amount}}</td>
             </tr>
         </tbody>
     </table>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <h4>Tambah Data User</h4>
+        <h3 class="fw-bold mb-3">Tambah Data User</h3>
         <!-- Notifikasi validasi -->
         @if (count($errors) > 0)
         <ul class="alert alert-danger">
@@ -33,7 +33,7 @@
                 <label for="level">Level</label>                       
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="/home" class="btn btn-secondary">Batal</a>
+            <a href="/home" class="btn btn-secondary ms-2">Batal</a>
         </form>
     </body>
 @endsection

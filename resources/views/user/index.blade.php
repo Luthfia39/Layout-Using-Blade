@@ -8,8 +8,8 @@
             {{Session::get('pesan')}}
         </div>
     @endif
-    <h1 class="text-center">Data User</h1>
-    <table class="table table-bordered">
+    <h1 class="text-center mb-3">Data User</h1>
+    <table class="table table-bordered text-center" style="border: black;">
         <thead>
             <tr>
                 <th>No</th>
@@ -32,7 +32,7 @@
                         <button onclick="return confirm('Yakin akan menghapus?')" 
                         class="btn btn-primary">Hapus</button>
                     </form>
-                    <form action="{{route('user.edit',$value->id)}}" method="POST">
+                    <form action="{{route('user.edit',$value->id)}}" method="POST" class="p-1">
                         @csrf
                         <button class="btn btn-primary">Edit</button>
                     </form>
@@ -46,6 +46,6 @@
         Tambah Data
     </a>
     @else
-    <p class="display-6 text-center mt-5">Anda tidak dapat mengakses laman ini</p>
+    <p class="display-6 text-center mt-5">Silahkan <i>Login</i> sebagai Admin Untuk Mengakses Laman ini</p>
     @endif
 @endsection

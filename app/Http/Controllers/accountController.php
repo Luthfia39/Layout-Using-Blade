@@ -6,12 +6,7 @@ use App\Models\account;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class accountController extends Controller
-{
-    public function __construct(){
-        $this->middleware('auth');
-    }
-
+class accountController extends Controller{
     public function index(){
         $batas = 3;
         $visitor = account::orderBy('id', 'desc')->paginate($batas);

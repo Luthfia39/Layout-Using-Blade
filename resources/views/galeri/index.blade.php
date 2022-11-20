@@ -9,7 +9,7 @@
         </div>
     @endif
     <h3 class="fw-bold mb-5 text-center"> Data Gambar </h3>
-    <table class="table table-bordered text-center">
+    <table class="table table-bordered text-center" style="border: black;">
         <thead>
             <tr>
                 <th>id</th>
