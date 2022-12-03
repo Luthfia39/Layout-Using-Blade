@@ -18,6 +18,9 @@
 
     <!-- Lightbox -->
     <link href="{{ asset('dist/css/lightbox.min.css') }}" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background-color: #F0C5C0;">
     <div id="app">

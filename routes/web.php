@@ -6,6 +6,7 @@ use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\showBookController;
 use App\Http\Controllers\tryController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\commentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Model_Buku;
@@ -45,6 +46,7 @@ Route::post('/buku/edit/{id}', [bukuController::class, 'edit'])->name('buku.edit
 Route::post('/buku/update/{id}', [bukuController::class, 'update'])->name('buku.update');
 Route::get('/buku/search', [bukuController::class, 'search'])->name('buku.search');
 Route::post('/detail-buku/{judul}', [bukuController::class, 'galbuku'])->name('buku.detail');
+Route::post('/buku/like/{id}', [bukuController::class, 'likeBuku'])->name('buku.like');
 Auth::routes();
 
 // user
@@ -64,3 +66,6 @@ Route::post('/galeri/store', [GaleriController::class, 'store'])->name('galeri.s
 Route::post('/galeri/delete/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 Route::post('/galeri/edit/{id}', [GaleriController::class, 'edit'])->name('galeri.edit');
 Route::post('/galeri/update/{id}', [GaleriController::class, 'update'])->name('galeri.update');
+
+// comment
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');

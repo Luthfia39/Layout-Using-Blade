@@ -25,7 +25,7 @@
                 <label for="tgl_terbit">Tanggal Terbit</label>                       
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="/home" class="btn btn-secondary">Batal</a>
+            <a href="/home" class="btn btn-secondary ms-3">Batal</a>
         </form>
     </body>
     <!-- Mengatur tampilan/format tanggal dari bagian belakang/backend -->

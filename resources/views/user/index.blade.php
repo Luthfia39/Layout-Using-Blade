@@ -30,11 +30,11 @@
                     <form action="{{route('user.destroy',$value->id)}}" method="POST">
                         @csrf
                         <button onclick="return confirm('Yakin akan menghapus?')" 
-                        class="btn btn-primary">Hapus</button>
+                        class="btn btn-danger">Hapus</button>
                     </form>
                     <form action="{{route('user.edit',$value->id)}}" method="POST" class="p-1">
                         @csrf
-                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-warning">Edit</button>
                     </form>
                 </td>
             </tr>

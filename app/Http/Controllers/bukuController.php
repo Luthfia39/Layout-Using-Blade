@@ -92,6 +92,13 @@ class bukuController extends Controller
     public function galbuku($judul){
         $buku = Model_Buku::where('buku_seo', $judul)->first();
         $galeri = $buku->photos()->orderBy('id', 'desc')->paginate(2);
-        return view('buku.detail', compact('buku', 'galeri'));
+        $comments = $buku->comment()->orderBy('id')->get();
+        return view('buku.detail', compact('buku', 'galeri', 'comments'));
+    }
+
+    public function likeBuku(Request $request, $id){
+        $buku = Model_Buku::find($id);
+        $buku->increment('suka');
+        return back();
     }
 }

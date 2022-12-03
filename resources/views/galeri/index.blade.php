@@ -34,11 +34,11 @@
                     <form action="{{route('galeri.destroy',$data->id)}}" method="POST">
                         @csrf
                         <button onclick="return confirm('Yakin akan menghapus?')" 
-                        class="btn btn-primary">Hapus</button>
+                        class="btn btn-danger">Hapus</button>
                     </form>
                     <form action="{{route('galeri.edit',$data->id)}}" method="POST" class="p-1">
                         @csrf
-                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-warning">Edit</button>
                     </form>
                 </td>
             </tr>

@@ -39,15 +39,22 @@
                     <form action="{{route('buku.destroy',$value->id)}}" method="POST">
                         @csrf
                         <button onclick="return confirm('Yakin akan menghapus?')" 
-                        class="btn btn-primary">Hapus</button>
+                        class="btn btn-danger">Hapus</button>
                     </form>
                     <form action="{{route('buku.edit',$value->id)}}" method="POST" method="POST" class="p-1">
                         @csrf
-                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-warning">Edit</button>
                     </form>
                     <form action="{{ route('buku.detail', $value->buku_seo) }}" method="POST" method="POST" class="pb-1">
                         @csrf
-                        <button class="btn btn-primary">Detail</button>
+                        <button class="btn btn-info">Detail</button>
+                    </form>
+                    <form action="{{route('buku.like',$value->id)}}" method="POST" method="POST" class="p-1">
+                        @csrf
+                        <button class="btn btn-primary">
+                            <i class="fa fa-thumbs-up"></i>
+                            <span class="badge badge-light">{{$value->suka}}</span>
+                        </button>
                     </form>
                 </td>
             </tr>

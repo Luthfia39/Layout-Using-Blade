@@ -11,9 +11,10 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up(){
+    public function up()
+    {
         Schema::table('buku', function (Blueprint $table) {
-            $table->string('buku_seo');
+            $table->integer('suka');
         });
     }
 
@@ -24,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('buku', function (Blueprint $table) {
+            //
+        });
     }
 };
